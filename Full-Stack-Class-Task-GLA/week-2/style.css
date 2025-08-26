@@ -1,0 +1,147 @@
+/* ================== GLOBAL STYLE ================== */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(120deg, #f6f9fc, #eef6ff);
+  color: #333;
+}
+
+header {
+  text-align: center;
+  padding: 25px;
+  background-color: #004aad; /* HEX color */
+  color: white;
+  border-bottom-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+h1 {
+  margin: 0;
+  font-size: 36px;
+}
+
+section {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+/* ================== TASK 3: SELECTORS ================== */
+
+/* Element Selector */
+p {
+  line-height: 1.8;
+  margin-bottom: 15px;
+}
+
+/* Class Selector */
+.highlight {
+  background-color: rgb(230, 245, 255); /* RGB */
+  padding: 10px;
+  border-left: 6px solid #004aad;
+  border-radius: 6px;
+}
+
+/* ID Selector */
+#mission {
+  color: rgba(220, 20, 60, 0.9); /* RGBA */
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Attribute Selector */
+a[target="_blank"] {
+  color: hsl(210, 70%, 40%); /* HSL */
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* Pseudo-class Selector */
+a:hover {
+  color: #ff6600;
+  text-decoration: underline;
+}
+
+/* Pseudo-element Selector */
+p::first-letter {
+  font-size: 150%;
+  font-weight: bold;
+  color: #8e44ad;
+}
+
+/* ================== TASK 4: MOVIE LIST ================== */
+ul {
+  list-style-type: "🎬 ";
+  padding-left: 25px;
+}
+
+ul li {
+  margin: 8px 0;
+  font-size: 17px;
+}
+
+.fav-movie {
+  color: #e67e22;
+  font-weight: bold;
+  font-style: italic;
+  background: #fff5e6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+  animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+  from { box-shadow: 0 0 8px #e67e22; }
+  to { box-shadow: 0 0 20px #ffb84d; }
+}
+
+/* ================== TASK 5: CITY LIST ================== */
+ol {
+  counter-reset: city;
+  padding-left: 25px;
+}
+
+ol li {
+  margin: 10px 0;
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: white;
+  font-size: 18px;
+  position: relative;
+}
+
+.city1 { background: linear-gradient(45deg, #2980b9, #6dd5fa); }
+.city2 { background: linear-gradient(45deg, #27ae60, #a8e063); }
+.city3 { background: linear-gradient(45deg, #e74c3c, #f39c12); }
+.city4 { background: linear-gradient(45deg, #8e44ad, #c0392b); }
+
+ol li::before {
+  counter-increment: city;
+  content: counter(city) ". ";
+  font-weight: bold;
+  position: absolute;
+  left: -30px;
+}
+
+ol li:hover {
+  transform: scale(1.05);
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+/* ================== FOOTER ================== */
+footer {
+  text-align: center;
+  padding: 15px;
+  margin-top: 30px;
+  background: #004aad;
+  color: white;
+  border-top-left-radius: 25px;
+  border-top-right-radius: 25px;
+  font-size: 14px;
+}
