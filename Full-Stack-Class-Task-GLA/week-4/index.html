@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Startup Landing Page</title>
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+ 
+    .nav-link {
+      transition: all 0.4s;
+    }
+    .nav-link:hover {
+      background-color: #ff9900;
+      color: #000 !important;
+      border-radius: 6px;
+      padding-left: 12px;
+      padding-right: 12px;
+    }
+
+ 
+    .rocket {
+      width: 90px;
+      position: absolute;
+      bottom: -120px;
+      left: 50%;
+      transform: translateX(-50%);
+      animation: rocketMove 8s linear infinite;
+    }
+    @keyframes rocketMove {
+      0% { bottom: -120px; }
+      100% { bottom: 110%; }
+    }
+
+   
+    .astronaut {
+      width: 70px;
+      position: absolute;
+      top: 35%;
+      left: 10%;
+      animation: floatAstronaut 6s ease-in-out infinite;
+    }
+    @keyframes floatAstronaut {
+      0%   { transform: translateY(0); }
+      50%  { transform: translateY(-20px); }
+      100% { transform: translateY(0); }
+    }
+
+ 
+    footer {
+      background-color: #222;
+      color: #ccc;
+      padding: 15px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body style="overflow-x:hidden; background:#000; color:white;">
+
+
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+  <div class="container">
+    <a class="navbar-brand" href="#">🚀 MyStartup</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navmenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navmenu">
+      <ul class="navbar-nav ms-auto">
+        <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<div id="mainCarousel" class="carousel slide" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="space">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1457369804613-52c61a468e7d?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="rocket">
+    </div>
+    <div class="carousel-item">
+      <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?auto=format&fit=crop&w=1600&q=80" class="d-block w-100" alt="galaxy">
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#mainCarousel" data-bs-slide="prev">
+    <span class="carousel-control-prev-icon"></span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#mainCarousel" data-bs-slide="next">
+    <span class="carousel-control-next-icon"></span>
+  </button>
+</div>
+
+
+<div class="container my-5 text-center">
+  <h2 class="mb-4">Our Services</h2>
+  <div class="row g-4">
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png" class="card-img-top" alt="astronaut">
+        <div class="card-body">
+          <h5 class="card-title">Astronaut Training</h5>
+          <p class="card-text">Learn how astronauts prepare for real missions in space.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3212/3212607.png" class="card-img-top" alt="rocket">
+        <div class="card-body">
+          <h5 class="card-title">Rocket Launch</h5>
+          <p class="card-text">Join us for safe and modern rocket launch experiences.</p>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="card h-100 shadow-sm">
+        <img src="https://cdn-icons-png.flaticon.com/512/3212/3212602.png" class="card-img-top" alt="space">
+        <div class="card-body">
+          <h5 class="card-title">Space Tours</h5>
+          <p class="card-text">Explore the universe beyond Earth like never before.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<footer class="text-center">
+  <p>© 2025 MyStartup | Designed by Student</p>
+</footer>
+
+
+<img src="https://cdn-icons-png.flaticon.com/512/3212/3212607.png" class="rocket" alt="rocket">
+<img src="https://cdn-icons-png.flaticon.com/512/3212/3212608.png" class="astronaut" alt="astronaut">
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
