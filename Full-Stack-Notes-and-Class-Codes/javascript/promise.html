@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Call Api through promises</title>
+</head>
+<style>
+    *{
+        padding: 5;
+        margin: 0;
+        text-align: center;
+    }
+     #container{
+        border: 2px solid rgb(125, 33, 33);
+        height: 200px;
+        width: 300px;
+        margin: 5px;
+        margin-left: 40%;
+        
+    } 
+</style>
+<body>
+    <h2>Data Call through Api</h2>
+    <div id="container">
+    </div>
+    <button onclick="getdata()"> Get Data</button>
+    <div id="err">
+        Error is loading...
+    </div>
+
+    <script>
+        function getdata(){
+            let api = "https://dummyjson.com/products/1"
+        let myPromise = new Promise((resolve, reject)=>{
+            fetch(api)
+            .then(res => res.json())
+            .then(info => resolve(info))
+            .catch(error => reject(error))
+        })
+        myPromise 
+        .then(key => {document.getElementById('container').innerHTML = `
+        <div class = "comtent">
+        ${key.id}<br><br>
+        ${key.title}<br><br>
+        ${key.description}<br>
+        `
+    })
+        }
+    </script>
+</body>
+</html>
