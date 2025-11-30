@@ -1,0 +1,525 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Certificate of Completion - Abhishek Narwar</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet" />
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Montserrat", sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 40px 20px;
+}
+
+.certificate-container {
+    width: 100%;
+    max-width: 1200px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+    overflow: hidden;
+    position: relative;
+}
+
+/* Decorative border */
+.cert-border {
+    padding: 40px;
+    background: white;
+    border: 15px solid transparent;
+    border-image: linear-gradient(135deg, #667eea, #764ba2, #f093fb) 1;
+    position: relative;
+}
+
+.cert-border::before {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: 25px;
+    right: 25px;
+    bottom: 25px;
+    border: 2px solid #e5e7eb;
+    pointer-events: none;
+}
+
+/* Logo section */
+.logo-section {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.university-logo {
+    height: 90px;
+    margin-bottom: 15px;
+}
+
+.university-name {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1e3a8a;
+    letter-spacing: 1px;
+}
+
+.university-location {
+    font-size: 14px;
+    color: #6b7280;
+    margin-top: 5px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+/* Certificate content */
+.cert-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    margin-top: 40px;
+}
+
+/* Main certificate */
+.main-certificate {
+    position: relative;
+    padding: 50px 40px;
+    background: linear-gradient(135deg, #fefefe 0%, #f9fafb 100%);
+    border-radius: 15px;
+    border: 3px solid #2563eb;
+    box-shadow: 0 10px 30px rgba(37, 99, 235, 0.15);
+}
+
+/* Decorative corners */
+.corner-decoration {
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    border-style: solid;
+    border-color: #fbbf24;
+}
+
+.corner-decoration.top-left {
+    top: 15px;
+    left: 15px;
+    border-width: 3px 0 0 3px;
+}
+
+.corner-decoration.top-right {
+    top: 15px;
+    right: 15px;
+    border-width: 3px 3px 0 0;
+}
+
+.corner-decoration.bottom-left {
+    bottom: 15px;
+    left: 15px;
+    border-width: 0 0 3px 3px;
+}
+
+.corner-decoration.bottom-right {
+    bottom: 15px;
+    right: 15px;
+    border-width: 0 3px 3px 0;
+}
+
+/* Gold seal */
+.seal {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    width: 110px;
+    height: 110px;
+    background: radial-gradient(circle at 30% 30%, #fef08a, #fbbf24, #f59e0b, #d97706);
+    border-radius: 50%;
+    box-shadow: 0 8px 25px rgba(217, 119, 6, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    border: 4px solid #92400e;
+    z-index: 10;
+}
+
+.seal-inner {
+    width: 85%;
+    height: 85%;
+    border: 2px solid #92400e;
+    border-radius: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.seal-text {
+    font-size: 18px;
+    font-weight: 700;
+    color: #451a03;
+    text-align: center;
+    line-height: 1.2;
+}
+
+.seal-year {
+    font-size: 11px;
+    margin-top: 2px;
+    color: #78350f;
+}
+
+/* Certificate text */
+.cert-header {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 40px;
+    font-weight: 700;
+    color: #1e40af;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(30, 64, 175, 0.1);
+}
+
+.cert-subtitle {
+    text-align: center;
+    font-size: 14px;
+    color: #6b7280;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.cert-intro {
+    text-align: center;
+    font-size: 16px;
+    color: #374151;
+    margin-bottom: 15px;
+}
+
+.student-name {
+    font-family: "Playfair Display", serif;
+    text-align: center;
+    font-size: 42px;
+    font-weight: 700;
+    color: #1e3a8a;
+    margin: 25px 0;
+    letter-spacing: 2px;
+}
+
+.name-underline {
+    width: 65%;
+    height: 3px;
+    background: linear-gradient(90deg, transparent, #2563eb, transparent);
+    margin: 20px auto;
+}
+
+.cert-body {
+    text-align: center;
+    font-size: 16px;
+    color: #374151;
+    line-height: 1.8;
+    margin: 30px 0;
+}
+
+.course-name {
+    font-weight: 700;
+    color: #1e40af;
+    font-size: 18px;
+    display: block;
+    margin: 10px 0;
+}
+
+.date-issued {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 14px;
+    color: #6b7280;
+}
+
+/* Signatures */
+.signatures {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 50px;
+    gap: 30px;
+}
+
+.signature-block {
+    text-align: center;
+    flex: 1;
+}
+
+.signature-line {
+    width: 180px;
+    height: 2px;
+    background: #1f2937;
+    margin: 0 auto 8px;
+}
+
+.signature-name {
+    font-weight: 600;
+    color: #1f2937;
+    font-size: 15px;
+}
+
+.signature-title {
+    font-size: 12px;
+    color: #6b7280;
+    margin-top: 3px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* Reward panel */
+.reward-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.reward-card {
+    background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 100%);
+    border-radius: 15px;
+    padding: 35px 30px;
+    color: white;
+    box-shadow: 0 15px 40px rgba(30, 58, 138, 0.4);
+    position: relative;
+    overflow: hidden;
+}
+
+.reward-card::before {
+    content: '₹';
+    position: absolute;
+    top: -20px;
+    right: -20px;
+    font-size: 200px;
+    opacity: 0.05;
+    font-weight: 700;
+}
+
+.reward-label {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    opacity: 0.8;
+    margin-bottom: 15px;
+}
+
+.reward-value {
+    font-size: 56px;
+    font-weight: 700;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.2);
+}
+
+.reward-value .currency {
+    font-size: 32px;
+    opacity: 0.9;
+}
+
+.reward-badge {
+    display: inline-block;
+    padding: 8px 18px;
+    background: rgba(255,255,255,0.2);
+    border: 1px solid rgba(255,255,255,0.3);
+    border-radius: 25px;
+    font-size: 12px;
+    letter-spacing: 1px;
+    backdrop-filter: blur(10px);
+    margin-bottom: 20px;
+}
+
+.reward-description {
+    font-size: 14px;
+    line-height: 1.6;
+    opacity: 0.95;
+}
+
+/* Certificate info card */
+.info-card {
+    background: linear-gradient(135deg, #f9fafb 0%, #f3f4f6 100%);
+    border-radius: 15px;
+    padding: 25px;
+    border: 2px solid #e5e7eb;
+}
+
+.info-title {
+    font-size: 14px;
+    font-weight: 600;
+    color: #1f2937;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 12px 0;
+    border-bottom: 1px solid #e5e7eb;
+    font-size: 13px;
+}
+
+.info-item:last-child {
+    border-bottom: none;
+}
+
+.info-label {
+    color: #6b7280;
+    font-weight: 500;
+}
+
+.info-value {
+    color: #1f2937;
+    font-weight: 600;
+}
+
+@media print {
+    body {
+        background: white;
+    }
+    
+    .certificate-container {
+        box-shadow: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .cert-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .cert-border {
+        padding: 20px;
+    }
+    
+    .cert-header {
+        font-size: 28px;
+    }
+    
+    .student-name {
+        font-size: 32px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="certificate-container">
+    <div class="cert-border">
+        
+        <!-- University Header -->
+        <div class="logo-section">
+            <img class="university-logo" 
+                 src="https://upload.wikimedia.org/wikipedia/en/4/42/GLA_University_logo.png" 
+                 alt="GLA University Logo" />
+            <div class="university-name">GLA UNIVERSITY</div>
+            <div class="university-location">Mathura, Uttar Pradesh</div>
+        </div>
+
+        <!-- Main Content -->
+        <div class="cert-content">
+            
+            <!-- Certificate -->
+            <div class="main-certificate">
+                
+                <!-- Corner decorations -->
+                <div class="corner-decoration top-left"></div>
+                <div class="corner-decoration top-right"></div>
+                <div class="corner-decoration bottom-left"></div>
+                <div class="corner-decoration bottom-right"></div>
+
+                <!-- Gold Seal -->
+                <div class="seal">
+                    <div class="seal-inner">
+                        <div class="seal-text">GLA<br>UNIV</div>
+                        <div class="seal-year">2025</div>
+                    </div>
+                </div>
+
+                <!-- Certificate Content -->
+                <div class="cert-header">Certificate</div>
+                <div class="cert-subtitle">of Completion</div>
+
+                <div class="cert-intro">This is to certify that</div>
+
+                <div class="student-name">ABHISHEK NARWAR</div>
+                <div class="name-underline"></div>
+
+                <div class="cert-body">
+                    has successfully completed the academic program
+                    <span class="course-name">Bachelor of Technology in Artificial Intelligence & Machine Learning</span>
+                    at GLA University, Mathura with dedication and excellence.
+                </div>
+
+                <div class="date-issued">Date of Issue: November dec, 2025</div>
+
+                <!-- Signatures -->
+                <div class="signatures">
+                    <div class="signature-block">
+                        <div class="signature-line"></div>
+                        <div class="signature-name">Mr. Rohan Das</div>
+                        <div class="signature-title">Course Instructor</div>
+                    </div>
+
+                    <div class="signature-block">
+                        <div class="signature-line"></div>
+                        <div class="signature-name">Mr. Aman Sharma</div>
+                        <div class="signature-title">Program Coordinator</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Panel -->
+            <div class="reward-panel">
+                
+                <!-- Reward Card -->
+                <div class="reward-card">
+                    <div class="reward-label">Certificate Price</div>
+                    <div class="reward-value">
+                        <span class="currency">₹</span>12,000
+                    </div>
+                    <div class="reward-badge">✓ Official Certificate</div>
+                    <div class="reward-description">
+                        Official certificate issuance fee for B.Tech AIML program completion from GLA University, Mathura.
+                    </div>
+                </div>
+
+                <!-- Certificate Info -->
+                <div class="info-card">
+                    <div class="info-title">Certificate Details</div>
+                    <div class="info-item">
+                        <span class="info-label">Program</span>
+                        <span class="info-value">B.Tech AIML</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Institution</span>
+                        <span class="info-value">GLA University</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Year</span>
+                        <span class="info-value">2025</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Status</span>
+                        <span class="info-value">Verified</span>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
