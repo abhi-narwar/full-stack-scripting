@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>jQuery Login Form</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    #login-box {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      border: 1px solid #ccc;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+  <button id="show-login">Show Login</button>
+  <button id="hide-login">Hide Login</button>
+
+  <div id="login-box">
+    <h2>Login</h2>
+    <label>Username: <input type="text"></label><br><br>
+    <label>Password: <input type="password"></label><br><br>
+    <button>Submit</button>
+  </div>
+
+  <script>
+    $("#show-login").on("click", function () {
+      $("#login-box").fadeIn();
+    });
+
+    $("#hide-login").on("click", function () {
+      $("#login-box").fadeOut();
+    });
+  </script>
+</body>
+</html>

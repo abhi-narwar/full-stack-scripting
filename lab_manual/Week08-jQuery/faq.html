@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>FAQ with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+  <style>
+    .question {
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+    .answer {
+      display: none;
+      margin-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>FAQ Section</h1>
+  <div class="faq-item">
+    <div class="question">What is HTML?</div>
+    <div class="answer">HTML stands for HyperText Markup Language.</div>
+  </div>
+  <div class="faq-item">
+    <div class="question">What is CSS?</div>
+    <div class="answer">CSS stands for Cascading Style Sheets.</div>
+  </div>
+
+  <script>
+    $(".question").on("click", function () {
+      $(this).next(".answer").slideToggle();
+    });
+  </script>
+</body>
+</html>

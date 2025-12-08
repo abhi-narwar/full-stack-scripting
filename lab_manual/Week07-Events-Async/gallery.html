@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Image Gallery</title>
+  <style>
+    .thumbnails img {
+      width: 80px;
+      cursor: pointer;
+      margin-right: 5px;
+    }
+    .main-image img {
+      width: 300px;
+      display: block;
+      margin-bottom: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Simple Image Gallery</h1>
+  <div class="main-image">
+    <img id="main-img" src="img1.jpg" alt="Main">
+  </div>
+  <div class="thumbnails" id="thumbs">
+    <img src="img1.jpg" alt="1">
+    <img src="img2.jpg" alt="2">
+    <img src="img3.jpg" alt="3">
+  </div>
+
+  <script>
+    const mainImg = document.getElementById("main-img");
+    const thumbs = document.getElementById("thumbs");
+
+    // Event delegation
+    thumbs.addEventListener("click", function (event) {
+      if (event.target.tagName === "IMG") {
+        mainImg.src = event.target.src;
+      }
+    });
+  </script>
+</body>
+</html>

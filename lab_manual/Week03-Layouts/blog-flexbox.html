@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Flexbox Blog Layout</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+    }
+    header, footer {
+      background: #0d6efd;
+      color: white;
+      padding: 10px 20px;
+      text-align: center;
+    }
+    .container {
+      display: flex;
+      padding: 20px;
+      gap: 16px;
+    }
+    .column {
+      flex: 1;
+      background: #f8f9fa;
+      padding: 10px;
+      border-radius: 6px;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>My Blog</h1>
+  </header>
+  <div class="container">
+    <div class="column">
+      <h2>Post 1</h2>
+      <p>Content for the first post.</p>
+    </div>
+    <div class="column">
+      <h2>Post 2</h2>
+      <p>Content for the second post.</p>
+    </div>
+    <div class="column">
+      <h2>Post 3</h2>
+      <p>Content for the third post.</p>
+    </div>
+  </div>
+  <footer>
+    <p>&copy; 2025 My Blog</p>
+  </footer>
+</body>
+</html>

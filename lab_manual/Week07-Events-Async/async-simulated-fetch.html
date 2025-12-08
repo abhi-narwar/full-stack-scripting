@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Simulated Fetch</title>
+</head>
+<body>
+  <h1>Simulate Fetch with setTimeout and Promises</h1>
+  <button id="load-btn">Load Data</button>
+  <pre id="output"></pre>
+
+  <script>
+    function fakeFetch() {
+      return new Promise(function (resolve) {
+        setTimeout(function () {
+          resolve({ message: "Data loaded from fake server", time: new Date().toLocaleTimeString() });
+        }, 2000);
+      });
+    }
+
+    const btn = document.getElementById("load-btn");
+    const output = document.getElementById("output");
+
+    btn.addEventListener("click", function () {
+      output.textContent = "Loading...";
+      fakeFetch().then(function (data) {
+        output.textContent = JSON.stringify(data, null, 2);
+      });
+    });
+  </script>
+</body>
+</html>

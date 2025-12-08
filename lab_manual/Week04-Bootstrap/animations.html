@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Space Animation</title>
+  <style>
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #1b2735, #090a0f);
+      overflow: hidden;
+      height: 100vh;
+    }
+    .rocket {
+      position: absolute;
+      bottom: -100px;
+      left: 50%;
+      width: 80px;
+      transform: translateX(-50%);
+      animation: fly 5s linear infinite;
+    }
+    @keyframes fly {
+      0% { bottom: -100px; }
+      50% { bottom: 50%; }
+      100% { bottom: 110%; }
+    }
+    .astronaut {
+      position: absolute;
+      top: 20%;
+      right: 10%;
+      width: 60px;
+      animation: float 3s ease-in-out infinite alternate;
+    }
+    @keyframes float {
+      from { transform: translateY(0); }
+      to { transform: translateY(-20px); }
+    }
+  </style>
+</head>
+<body>
+  <img src="rocket.png" alt="Rocket" class="rocket">
+  <img src="astronaut.png" alt="Astronaut" class="astronaut">
+</body>
+</html>

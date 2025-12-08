@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Responsive Sidebar</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      display: flex;
+    }
+    .sidebar {
+      width: 240px;
+      background: #343a40;
+      color: white;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    .sidebar a {
+      display: block;
+      color: white;
+      text-decoration: none;
+      margin: 10px 0;
+    }
+    .sidebar a:hover {
+      text-decoration: underline;
+    }
+    .content {
+      padding: 20px;
+      flex: 1;
+    }
+    @media (max-width: 768px) {
+      body {
+        flex-direction: column;
+      }
+      .sidebar {
+        width: 100%;
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+<body>
+  <nav class="sidebar">
+    <h2>Menu</h2>
+    <a href="#">Home</a>
+    <a href="#">Blog</a>
+    <a href="#">Contact</a>
+  </nav>
+  <main class="content">
+    <h1>Responsive Sidebar Layout</h1>
+    <p>This is a simple page with a sidebar.</p>
+  </main>
+</body>
+</html>

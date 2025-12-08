@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Universities Search</title>
+</head>
+<body>
+  <h1>Search Universities by Country</h1>
+  <input type="text" id="country" placeholder="Enter country name e.g. India">
+  <button id="search-btn">Search</button>
+  <table border="1">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>State/Province</th>
+        <th>Website</th>
+      </tr>
+    </thead>
+    <tbody id="results"></tbody>
+  </table>
+
+  <script>
+    const btn = document.getElementById("search-btn");
+    const countryInput = document.getElementById("country");
+    const resultsBody = document.getElementById("results");
+
+    btn.addEventListener("click", function () {
+      const country = countryInput.value.trim();
+      if (!country) return;
+
+      const url = "https://universities.hipolabs.com/search?country=" + encodeURIComponent(country);
+
+      fetch(url)
+        .then(function (response) { return response.json(); })
+        .then(function (data) {
+          resultsBody.innerHTML = "";
+          data.forEach(function (uni) {
+            const tr = document.createElement("tr");
+            const nameTd = document.createElement("td");
+            const stateTd = document.createElement("td");
+            const webTd = document.createElement("td");
+            const link = document.createElement("a");
+
+            nameTd.textContent = uni.name;
+            stateTd.textContent = uni["state-province"] || "";
+            link.href = uni.web_pages[0];
+            link.textContent = uni.web_pages[0];
+            link.target = "_blank";
+            webTd.appendChild(link);
+
+            tr.appendChild(nameTd);
+            tr.appendChild(stateTd);
+            tr.appendChild(webTd);
+            resultsBody.appendChild(tr);
+          });
+        });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Age Eligibility Checker</title>
+  <script>
+    function checkEligibility() {
+      var age = prompt("Enter your age:");
+      age = Number(age);
+      if (isNaN(age)) {
+        alert("Please enter a valid number.");
+        return;
+      }
+
+      // if-else
+      if (age >= 18) {
+        alert("You are eligible to vote.");
+      } else {
+        alert("You are not eligible to vote.");
+      }
+
+      // ternary operator
+      var message = age >= 18 ? "Adult" : "Minor";
+      document.getElementById("result").textContent = "You are: " + message;
+    }
+  </script>
+</head>
+<body onload="checkEligibility()">
+  <h1>Eligibility Checker</h1>
+  <p id="result"></p>
+</body>
+</html>

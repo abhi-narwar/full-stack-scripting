@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Array Methods Practice</title>
+</head>
+<body>
+  <h1>Array Methods: map, filter, reduce, forEach</h1>
+  <pre id="output"></pre>
+
+  <script>
+    const numbers = [1, 2, 3, 4, 5];
+
+    // map: double each number
+    const doubled = numbers.map(function (n) {
+      return n * 2;
+    });
+
+    // filter: keep even numbers
+    const evens = numbers.filter(function (n) {
+      return n % 2 === 0;
+    });
+
+    // reduce: sum of numbers
+    const sum = numbers.reduce(function (acc, n) {
+      return acc + n;
+    }, 0);
+
+    // forEach: print each value
+    let log = "";
+    numbers.forEach(function (n, index) {
+      log += "Index " + index + " = " + n + "\n";
+    });
+
+    const output = `
+Original: ${numbers}
+Doubled (map): ${doubled}
+Even numbers (filter): ${evens}
+Sum (reduce): ${sum}
+
+forEach log:
+${log}
+    `;
+
+    document.getElementById("output").textContent = output;
+  </script>
+</body>
+</html>

@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Advanced To-Do List</title>
+  <style>
+    li.completed {
+      text-decoration: line-through;
+      color: gray;
+    }
+    button {
+      margin-left: 4px;
+    }
+  </style>
+</head>
+<body>
+  <h1>Advanced To-Do List</h1>
+  <input type="text" id="task-input" placeholder="Enter task">
+  <button id="add-btn">Add</button>
+  <ul id="task-list"></ul>
+
+  <script>
+    const input = document.getElementById("task-input");
+    const addBtn = document.getElementById("add-btn");
+    const list = document.getElementById("task-list");
+
+    function createTaskItem(text) {
+      const li = document.createElement("li");
+
+      const checkbox = document.createElement("input");
+      checkbox.type = "checkbox";
+      checkbox.addEventListener("change", function () {
+        li.classList.toggle("completed", checkbox.checked);
+      });
+
+      const span = document.createElement("span");
+      span.textContent = " " + text + " ";
+
+      const upBtn = document.createElement("button");
+      upBtn.textContent = "Up";
+      upBtn.addEventListener("click", function () {
+        const prev = li.previousElementSibling;
+        if (prev) {
+          list.insertBefore(li, prev);
+        }
+      });
+
+      const downBtn = document.createElement("button");
+      downBtn.textContent = "Down";
+      downBtn.addEventListener("click", function () {
+        const next = li.nextElementSibling;
+        if (next) {
+          list.insertBefore(next, li);
+        }
+      });
+
+      const delBtn = document.createElement("button");
+      delBtn.textContent = "Delete";
+      delBtn.addEventListener("click", function () {
+        list.removeChild(li);
+      });
+
+      li.appendChild(checkbox);
+      li.appendChild(span);
+      li.appendChild(upBtn);
+      li.appendChild(downBtn);
+      li.appendChild(delBtn);
+
+      return li;
+    }
+
+    addBtn.addEventListener("click", function () {
+      const text = input.value.trim();
+      if (!text) return;
+      const li = createTaskItem(text);
+      list.appendChild(li);
+      input.value = "";
+      input.focus();
+    });
+  </script>
+</body>
+</html>

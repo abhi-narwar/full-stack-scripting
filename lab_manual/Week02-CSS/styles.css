@@ -1,0 +1,68 @@
+/* Element selector */
+body {
+  font-family: Arial, sans-serif;
+  background-color: hsl(210, 50%, 98%);
+  margin: 0;
+  padding: 20px;
+}
+
+/* ID selector */
+#main-header {
+  background-color: #0d6efd; /* HEX */
+  color: white;
+  padding: 20px;
+  text-align: center;
+}
+
+/* Class selector */
+.title {
+  margin: 0;
+}
+
+.subtitle {
+  margin-top: 5px;
+  font-size: 0.9rem;
+}
+
+/* Attribute selector */
+p[data-info="intro"] {
+  color: rgb(60, 60, 60); /* RGB */
+}
+
+/* Pseudo-class */
+a.btn:hover {
+  background-color: rgba(13, 110, 253, 0.8); /* RGBA */
+  transform: scale(1.05);
+}
+
+/* Pseudo-element */
+h2::after {
+  content: "";
+  display: block;
+  width: 50px;
+  height: 3px;
+  background: #0d6efd;
+  margin-top: 4px;
+}
+
+/* Button styling */
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 10px 20px;
+  border-radius: 4px;
+  text-decoration: none;
+  background-color: #198754;
+  color: white;
+}
+
+/* Movie and city lists */
+.favorite-movie {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.city-list li {
+  list-style-type: square;
+  margin-bottom: 4px;
+}

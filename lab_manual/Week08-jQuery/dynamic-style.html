@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Dynamic Style with jQuery</title>
+  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+</head>
+<body>
+  <h1 id="heading">Change My Style</h1>
+  <button id="style-btn">Apply Style</button>
+
+  <script>
+    $("#style-btn").on("click", function () {
+      $("#heading").css({
+        "color": "blue",
+        "font-size": "32px",
+        "text-decoration": "underline"
+      });
+    });
+  </script>
+</body>
+</html>
