@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Dynamic To-Do List</title>
+  <style>
+    body { font-family: Arial; padding: 20px; }
+    li { margin: 6px 0; }
+    button { margin-left: 5px; }
+  </style>
+</head>
+<body>
+
+  <h2>Dynamic To-Do List</h2>
+  <input type="text" id="taskInput" placeholder="Enter task">
+  <button id="addBtn">Add Task</button>
+
+  <ul id="taskList"></ul>
+
+  <script>
+    let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+    function saveTasks() {
+      localStorage.setItem("tasks", JSON.stringify(tasks));
+    }
+
+    function renderTasks() {
+      const list = document.getElementById("taskList");
+      list.innerHTML = "";
+
+      tasks.forEach((task, index) => {
+        const li = document.createElement("li");
+
+        const span = document.createElement("span");
+        span.textContent = task;
+
+        const editBtn = document.createElement("button");
+        editBtn.textContent = "Edit";
+        editBtn.onclick = () => {
+          const newTask = prompt("Edit task:", task);
+          if (newTask !== null && newTask.trim()) {
+            tasks[index] = newTask.trim();
+            saveTasks();
+            renderTasks();
+          }
+        };
+
+        const delBtn = document.createElement("button");
+        delBtn.textContent = "Delete";
+        delBtn.onclick = () => {
+          tasks.splice(index, 1);
+          saveTasks();
+          renderTasks();
+        };
+
+        li.appendChild(span);
+        li.appendChild(editBtn);
+        li.appendChild(delBtn);
+        list.appendChild(li);
+      });
+    }
+
+    document.getElementById("addBtn").onclick = () => {
+      const input = document.getElementById("taskInput");
+      const value = input.value.trim();
+
+      if (!value) return;
+
+      tasks.push(value);
+      saveTasks();
+      renderTasks();
+      input.value = "";
+    };
+
+    renderTasks();
+  </script>
+
+</body>
+</html>

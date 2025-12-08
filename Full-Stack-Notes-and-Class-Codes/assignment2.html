@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Live Character Counter</title>
+  <style>
+    #counter {
+      font-weight: bold;
+      margin-top: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Live Character Counter</h2>
+
+  <textarea id="textBox" rows="5" cols="40" maxlength="100"
+            placeholder="Type here..."></textarea>
+
+  <div id="counter">Characters left: 100</div>
+
+  <script>
+    const textarea = document.getElementById("textBox");
+    const counter = document.getElementById("counter");
+    const limit = 100;
+
+    textarea.addEventListener("input", () => {
+      let remaining = limit - textarea.value.length;
+      counter.textContent = "Characters left: " + remaining;
+
+     
+      if (remaining > 60) {
+        counter.style.color = "green";
+      } else if (remaining > 20) {
+        counter.style.color = "orange";
+      } else {
+        counter.style.color = "red";
+      }
+
+      
+      if (textarea.value.length >= limit) {
+        textarea.value = textarea.value.substring(0, limit);
+      }
+    });
+  </script>
+
+</body>
+</html>
